@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "f9cb9dd6-6d51-4ea8-ad8d-786638ff212f",
+		"name": "stride",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "salewhole",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ceaffdcf-e72e-49b7-ade2-a915e624bdd6",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5bfc774f-cc38-4893-b594-66a4f99c44e4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 3s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"sales\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/sales/wholeMarket.do?year=2020&month=5&maxYear=&dateAnalysisType=0&source=7&porttype=1&fuleType=-1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sales",
+						"wholeMarket.do"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2020"
+						},
+						{
+							"key": "month",
+							"value": "5"
+						},
+						{
+							"key": "maxYear",
+							"value": ""
+						},
+						{
+							"key": "dateAnalysisType",
+							"value": "0"
+						},
+						{
+							"key": "source",
+							"value": "7"
+						},
+						{
+							"key": "porttype",
+							"value": "1"
+						},
+						{
+							"key": "fuleType",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "salemanf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9cb7402-ff5e-41f5-9bbe-44b79df6e791",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 3s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"上汽通用\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/sales/sales/manfMarket/getHomeManfMarketTopData.do?year=2020&month=5&dateAnalysisType=0&maxMonth=5&maxYear=&minDate=2016-1&refurbishDateFlag=1&source=2&fuleType=-1&selectManf=&selectBrand=&year=2020&month=5&dateAnalysisType=0&maxMonth=5&maxYear=&minDate=2016-1&refurbishDateFlag=1&source=2&fuleType=-1&selectManf=&selectBrand=&rankType=0&middleType=0&top=30&rankScope=1-10&datalabel=2019%25E5%25B9%25B4%25E7%25B4%25AF%25E8%25AE%25A1%25E9%2594%2580%25E9%2587%258F%252C2020%25E5%25B9%25B4%25E7%25B4%25AF%25E8%25AE%25A1%25E9%2594%2580%25E9%2587%258F%252C%25E7%25B4%25AF%25E8%25AE%25A1%25E5%2590%258C%25E6%25AF%2594%252C%25E6%2595%25B4%25E4%25BD%2593%25E5%25B8%2582%25E5%259C%25BA%25E7%25B4%25AF%25E8%25AE%25A1%25E5%2590%258C%25E6%25AF%2594&mainIndexList=sales%252Cmom%252Cyoy%252CsalesSum%252CtqSalesSum%252CyearYoy%252Cmix%252CtqMix%252CmixChange&manf=93",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sales",
+						"sales",
+						"manfMarket",
+						"getHomeManfMarketTopData.do"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2020"
+						},
+						{
+							"key": "month",
+							"value": "5"
+						},
+						{
+							"key": "dateAnalysisType",
+							"value": "0"
+						},
+						{
+							"key": "maxMonth",
+							"value": "5"
+						},
+						{
+							"key": "maxYear",
+							"value": ""
+						},
+						{
+							"key": "minDate",
+							"value": "2016-1"
+						},
+						{
+							"key": "refurbishDateFlag",
+							"value": "1"
+						},
+						{
+							"key": "source",
+							"value": "2"
+						},
+						{
+							"key": "fuleType",
+							"value": "-1"
+						},
+						{
+							"key": "selectManf",
+							"value": ""
+						},
+						{
+							"key": "selectBrand",
+							"value": ""
+						},
+						{
+							"key": "year",
+							"value": "2020"
+						},
+						{
+							"key": "month",
+							"value": "5"
+						},
+						{
+							"key": "dateAnalysisType",
+							"value": "0"
+						},
+						{
+							"key": "maxMonth",
+							"value": "5"
+						},
+						{
+							"key": "maxYear",
+							"value": ""
+						},
+						{
+							"key": "minDate",
+							"value": "2016-1"
+						},
+						{
+							"key": "refurbishDateFlag",
+							"value": "1"
+						},
+						{
+							"key": "source",
+							"value": "2"
+						},
+						{
+							"key": "fuleType",
+							"value": "-1"
+						},
+						{
+							"key": "selectManf",
+							"value": ""
+						},
+						{
+							"key": "selectBrand",
+							"value": ""
+						},
+						{
+							"key": "rankType",
+							"value": "0"
+						},
+						{
+							"key": "middleType",
+							"value": "0"
+						},
+						{
+							"key": "top",
+							"value": "30"
+						},
+						{
+							"key": "rankScope",
+							"value": "1-10"
+						},
+						{
+							"key": "datalabel",
+							"value": "2019%25E5%25B9%25B4%25E7%25B4%25AF%25E8%25AE%25A1%25E9%2594%2580%25E9%2587%258F%252C2020%25E5%25B9%25B4%25E7%25B4%25AF%25E8%25AE%25A1%25E9%2594%2580%25E9%2587%258F%252C%25E7%25B4%25AF%25E8%25AE%25A1%25E5%2590%258C%25E6%25AF%2594%252C%25E6%2595%25B4%25E4%25BD%2593%25E5%25B8%2582%25E5%259C%25BA%25E7%25B4%25AF%25E8%25AE%25A1%25E5%2590%258C%25E6%25AF%2594"
+						},
+						{
+							"key": "mainIndexList",
+							"value": "sales%252Cmom%252Cyoy%252CsalesSum%252CtqSalesSum%252CyearYoy%252Cmix%252CtqMix%252CmixChange"
+						},
+						{
+							"key": "manf",
+							"value": "93"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f3e59966-e7f3-4e19-9f93-b76f4038cace",
+				"type": "text/javascript",
+				"exec": [
+					"//获取环境变量",
+					"var username=pm.environment.get(\"username\");",
+					"var password=pm.environment.get(\"password\");",
+					"var login_url=pm.environment.get(\"login_url\");",
+					"//设置请求参数",
+					"const echoPostRequest = {",
+					"  url: login_url+'/api/cas-server/doLogin',",
+					"  method: 'POST',",
+					"  header:'Content-Type:application/json',",
+					"  body: {",
+					"    mode: 'raw',",
+					"    raw: JSON.stringify({\"data\":{\"username\":username,\"password\":password}})",
+					"  }};",
+					"//发送请求  ",
+					"pm.sendRequest(echoPostRequest, function (err, res) {",
+					"    //设置环境变量",
+					"    pm.environment.set(\"token\",res.json().data.token);",
+					"    console.log(res.json());",
+					"});",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2092aa0f-2e9a-4ec8-925b-763a4b9b4bae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
